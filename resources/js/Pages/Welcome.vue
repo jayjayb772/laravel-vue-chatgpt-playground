@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import LandingLayout from "../Layouts/LandingLayout.vue";
 
 defineProps({
     canLogin: Boolean,
@@ -10,7 +11,15 @@ defineProps({
 </script>
 
 <template>
-    <div>
+    <LandingLayout>
+        <template #page-header>
+            <h2>
+                Markdown editor
+            </h2>
+        </template>
 
-    </div>
+        <div>
+            Hello world
+        </div>
+    </LandingLayout>
 </template>

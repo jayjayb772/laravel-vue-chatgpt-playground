@@ -1,5 +1,5 @@
 <script setup>
-import AppLayout from '@/Layouts/AppLayout.vue';
+import LandingLayout from '@/Layouts/LandingLayout.vue';
 import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue';
 import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue';
 import SectionBorder from '@/Components/SectionBorder.vue';
@@ -14,9 +14,9 @@ defineProps({
 </script>
 
 <template>
-    <AppLayout title="Profile">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <LandingLayout title="Profile">
+        <template #page-header>
+            <h2>
                 Profile
             </h2>
         </template>
@@ -36,9 +36,9 @@ defineProps({
                 </div>
 
                 <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
-                    <TwoFactorAuthenticationForm 
+                    <TwoFactorAuthenticationForm
                         :requires-confirmation="confirmsTwoFactorAuthentication"
-                        class="mt-10 sm:mt-0" 
+                        class="mt-10 sm:mt-0"
                     />
 
                     <SectionBorder />
@@ -53,5 +53,5 @@ defineProps({
                 </template>
             </div>
         </div>
-    </AppLayout>
+    </LandingLayout>
 </template>
