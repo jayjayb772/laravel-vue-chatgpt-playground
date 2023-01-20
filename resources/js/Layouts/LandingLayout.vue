@@ -20,6 +20,7 @@
                         <a v-if="!loggedIn" class="dropdown-option" @click="signIn">Sign In</a>
                         <a v-if="!loggedIn" class="dropdown-option" @click="signUp">Sign Up</a>
                         <a v-if="loggedIn" class="dropdown-option" @click="viewDashboard">Dashboard</a>
+                        <a v-if="loggedIn" class="dropdown-option" @click="viewDocuments">My Documents</a>
                         <a v-if="loggedIn" class="dropdown-option" @click="viewProfile">My account</a>
                         <a v-if="loggedIn" class="dropdown-option" @click="logOut">Log out</a>
                     </div>
@@ -60,6 +61,9 @@ export default {
         },
         viewDashboard() {
             this.$inertia.visit(route('dashboard'))
+        },
+        viewDocuments() {
+            this.$inertia.visit(route('documents.index'))
         },
     },
     computed:{
